@@ -1,0 +1,40 @@
+.titels_container{
+    background-color: green;
+    text-align: center;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.stage {
+    background-image: url(stage.png);
+    width: 1280px;
+    height: 769px;
+    margin: 0 auto;
+}
+
+#personage {
+    position: relative;
+    /* cursor: url('cursor_images/roos.cur'), url(cursor_images/roos.cur), url(roos.cur) 2 2, url('cursor_images/roos2.cur'), url(cursor_images/roos2.cur), pointer;	 */
+    /* cursor: default; */
+}
+
+.button_container {
+    text-align: center;
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#button_start {
+    margin-top: 10px;
+    width: 320px;
+    padding: 5px;
+    background-color: green;
+    color: white;
+}
