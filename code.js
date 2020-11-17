@@ -3,35 +3,43 @@
 //vaste begin instellingen
 var game = false;
 
+//elementen van de html opslaan.
 var stage = document.getElementById('stage');
 var personage = document.getElementById("personage");
 var button_start = document.getElementById("button_start");
+var infinite_mode_check = document.getElementById("infinite_mode_check").checked; //checked of "infinite_mode_check" checked is
 
-var background_w = parseInt(window.getComputedStyle(stage).width.replace('px',''));
+//geeft de style (width en height) en zet deze in variabelen
+var background_w = parseInt(window.getComputedStyle(stage).width.replace('px','')); 
 var background_h = parseInt(window.getComputedStyle(stage).height.replace('px',''));
 
 var personage_w = parseInt(window.getComputedStyle(personage).width.replace('px',''));
 var personage_h = parseInt(window.getComputedStyle(personage).height.replace('px',''));
 
+//variabelen om de positie te bepalen
+var pos_x = 0;
+var pos_y = 0;
+
 var x = 0;
 var y = 0;
+
+//het aantal hits en mis
 var hits = 0;
 var mis = 0;
 
+//de richtingen waarin het personage kan vliegen.
 var direction_array = ["N", "NE", "E", "SE", "S", "SW","W", "NW"];
 
+//onclick functies
 personage.onclick = function() {score(true, event)};
 stage.onclick = function() {score(false)};
-
 button_start.onclick = function() {start()};
-
-var pos_x = 0;
-var pos_y = 0;
 
 //game instellingen (speels)
 var stap_timer = 0.5; //aantal seconden tussen elke stap
 var vliegafstand = 75; //hoeveelheid px hij per stap verplaatst.
 var score_weergave = 5; //elke keer als er "score_weergave" keer geschoten is word de score op het scherm weergeven. 
+var stop_spel = 20; //nadat er "stop_spel" keer geschoten is word de score op het scherm weergeven en stopt het spel. 
 
 function start() {
     if (game == false) {
@@ -42,13 +50,7 @@ function start() {
         personage.style.left = pos_x + 'px';
         personage.style.cursor = 'pointer';
     
-        game = true;
-    
-        // alert("buiten het scherm 1 " + (pos_x + (personage_w /2)) + " "+ (background_w / 2));
-        // alert("buiten het scherm 1 " + ((pos_x + (personage_w /2)) < (background_w / 2)));
-        // alert("buiten het scherm 1 " + ((pos_x + (personage_w /2)) > (background_w / 2)));
-        // alert("buiten het scherm 1 " + ((pos_x + (personage_w /2)) == (background_w / 2)));
-    
+        game = true;   
         moveDuck(); 
     }
 }
@@ -153,7 +155,8 @@ function moveDuck() {
 }
 
 function score(click_personage, event) {
-    if (game == true) {
+    infinite_mode_check = document.getElementById("infinite_mode_check").checked;
+    if (game == true && infinite_mode_check == true) {
         if (click_personage === true) {
             hits++;
             event.stopPropagation();
@@ -164,5 +167,21 @@ function score(click_personage, event) {
         if (Number.isInteger(((hits + mis) / score_weergave))) {
             alert("Aantal hits: " + hits + "\nAantal mis: " + mis);
         }
-    }   
+    } else if (game == true && infinite_mode_check == false) {
+        if (click_personage === true) {
+            hits++;
+            event.stopPropagation();
+        } else if (click_personage != true) {
+            mis++;
+        }
+        
+        if (((hits + mis) >= stop_spel)) {
+            alert("Aantal hits: " + hits + "\nAantal mis: " + mis);
+
+            personage.style.cursor = 'default';
+            hits = 0;
+            mis = 0;
+            game = false;
+        }
+    }
 }

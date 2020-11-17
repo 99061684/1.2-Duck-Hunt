@@ -1,8 +1,15 @@
 # Duck Hunt game.
+de opdracht is gemaakt door: Bas Verdoorn
 
+ik heb de opdracht gemaakt met alle onderstaande eisen en een paar leuke extra dingen, zoals bijv. infinite mode uit stopt het spel na 20 keer schieten.
+
+## extra's
+* infinite mode: met infinite mode aan duurt het spel oneindig. met infinite mode uit stopt het spel na 20 keer schieten.
+* dynamisch: de game is dynamisch: als je de groote van een de personage veranderd dan blijft het spel werken. check in de code voor de (speels) var deze kan je veranderen om het spel moeilijker of juist makkelijker te maken.
+* extra css: ik heb het uiterlijk wat mooier gemaakt met css.
 
 ## DE OPDRACHT:
-Zo’n 30 jaar geleden werd de Nintendo NES uitgegeven. Naast Mario kon je het spel Duck Hunt spelen met een Zapper (soort pistool), waarbij je op het scherm moest richten en eenden neerknallen. Een demo van het spel kun je zien in het volgende filmpje:
+Zo’n 30 jaar geleden werd de Nintendo NES uitgegeven. Naast Mario kon je het spel Duck Hunt spelen met een Zapper (soort pistool), waarbij je op het scherm moest richten en eenden neerknallen. Een demo van het spel kun je zien in het volgende filmpje: https://youtu.be/x-daxzVxrQI 
  
 In deze opdracht gaan we een afgeleide van dit spel maken. Bijgaand vind je een geanimeerde GIF van een duck en een achtergrondafbeelding van het speelveld.
 
@@ -15,7 +22,7 @@ Deze parameter staat voor de richting die je meegeeft bij de functie aanroep en 
 
 ### STAP 2 "Moving Duck”
 
-Maak een globale array maken met alle richtingen (N, NE, E, SE, S, SW, W, NW) en zorg er voor dat je een functie (bijv moveDuck() ) hebt die de functie fly() iedere 0,5 seconden [https://www.w3schools.com/js/js_timing.asp](https://www.w3schools.com/js/js_timing.asp) uitvoert met een random richting uit de array.
+Maak een globale array maken met alle richtingen (N, NE, E, SE, S, SW, W, NW) en zorg er voor dat je een functie (bijv moveDuck() ) hebt die de functie fly() iedere 0,5 seconden (https://www.w3schools.com/js/js_timing.asp) uitvoert met een random richting uit de array.
 
 ### STAP 3 "Score”
 

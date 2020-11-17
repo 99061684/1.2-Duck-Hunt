@@ -12,15 +12,19 @@ h2 {
     font-size: 20px;
 }
 
+/* dit is de game stage je kan de width en height veranderen om het spelveld te vergroten of verkleinen */
 .stage {
     background-image: url(stage.png);
-    width: 1280px;
+    width: 1280px; 
     height: 769px;
     margin: 0 auto;
 }
 
+/* dit is de game personage je kan de width en height veranderen om de game personage te vergroten of verkleinen */
 #personage {
     position: relative;
+    width: 250px;
+    height: 250px;
     /* cursor: url('cursor_images/roos.cur'), url(cursor_images/roos.cur), url(roos.cur) 2 2, url('cursor_images/roos2.cur'), url(cursor_images/roos2.cur), pointer;	 */
     /* cursor: default; */
 }
