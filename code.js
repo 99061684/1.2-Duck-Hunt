@@ -61,52 +61,52 @@ function fly(direction) {
 
     switch (direction) {
         case "N":
-            pos_y = pos_y - 75;
+            pos_y = pos_y - vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';   
             break;
         case "NE":
-            pos_y = pos_y - 75;
-            pos_x = pos_x + 75;
+            pos_y = pos_y - vliegafstand;
+            pos_x = pos_x + vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
             
             break;
         case "E":
-            pos_x = pos_x + 75;
+            pos_x = pos_x + vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
                 
             break;
         case "SE":
-            pos_y = pos_y + 75;
-            pos_x = pos_x + 75;
+            pos_y = pos_y + vliegafstand;
+            pos_x = pos_x + vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
             
             break;
         case "S":
-            pos_y = pos_y + 75;
+            pos_y = pos_y + vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
             
             break;
         case "SW":
-            pos_y = pos_y + 75;
-            pos_x = pos_x - 75;
+            pos_y = pos_y + vliegafstand;
+            pos_x = pos_x - vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
             
             break;
         case "W":
-            pos_x = pos_x - 75;
+            pos_x = pos_x - vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
             
             break;
         case "NW":
-            pos_y = pos_y - 75;
-            pos_x = pos_x - 75;
+            pos_y = pos_y - vliegafstand;
+            pos_x = pos_x - vliegafstand;
             personage.style.top = pos_y + 'px'; 
             personage.style.left = pos_x + 'px';
           
@@ -117,28 +117,28 @@ function fly(direction) {
 
     if ((pos_x + (personage_w /2)) < 0) {
         // alert("buiten het scherm < " + ((pos_x + (personage_w /2)) < 0) + ", " + (pos_x + (personage_w /2)) + ", " + (background_w / 2));
-        pos_x = pos_x + 75;
+        pos_x = pos_x + vliegafstand;
         personage.style.top = pos_y + 'px'; 
         personage.style.left = pos_x + 'px'; 
     } 
 
-    if ((pos_x + (personage_w /2)) > 1280) {
+    if ((pos_x + (personage_w /2)) > background_w) {
         // alert("buiten het scherm > " + ((pos_x + (personage_w /2)) > 0)+ ", " + (pos_x + (personage_w /2)) + ", " + (background_w / 2));
-        pos_x = pos_x - 75;
+        pos_x = pos_x - vliegafstand;
         personage.style.top = pos_y + 'px'; 
         personage.style.left = pos_x + 'px';
     }
 
     if ((pos_y + (personage_w /2)) < 0) {
         // alert("buiten het scherm < " + ((pos_y + (personage_w /2)) < 0) + ", " + (pos_y + (personage_w /2)) + ", " + (background_h / 2));
-        pos_y = pos_y + 75;
+        pos_y = pos_y + vliegafstand;
         personage.style.top = pos_y + 'px'; 
         personage.style.left = pos_x + 'px';
     } 
 
-    if ((pos_y + (personage_w /2)) > 769) {
+    if ((pos_y + (personage_w /2)) > background_h) {
         // alert("buiten het scherm > " + ((pos_y + (personage_w /2)) > 0)+ ", " + (pos_y + (personage_w /2)) + ", " + (background_h / 2));
-        pos_y = pos_y - 75;
+        pos_y = pos_y - vliegafstand;
         personage.style.top = pos_y + 'px'; 
         personage.style.left = pos_x + 'px';
     }
