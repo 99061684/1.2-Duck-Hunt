@@ -8,8 +8,13 @@ var stage = document.getElementById('stage');
 var personage = document.getElementById("personage");
 var button_start = document.getElementById("button_start");
 var infinite_mode_check = document.getElementById("infinite_mode_check").checked; //checked of "infinite_mode_check" checked is
+var full_sreen_check = document.getElementById("full_sreen_check").checked; //checked of "full_sreen_check" checked is
 
-//geeft de style (width en height) en zet deze in variabelen
+var body_w = document.body.clientWidth;              /* width of <body> */
+var html_w = document.documentElement.clientWidth;   /* width of <html> */
+var window_w = window.innerWidth;                   /* window's width */
+
+//geeft de style (width en height) en zet deze in variabelen 
 var background_w = parseInt(window.getComputedStyle(stage).width.replace('px','')); 
 var background_h = parseInt(window.getComputedStyle(stage).height.replace('px',''));
 
@@ -50,7 +55,8 @@ function start() {
         personage.style.left = pos_x + 'px';
         personage.style.cursor = 'pointer';
     
-        game = true;   
+        game = true; 
+        fullsreen();  
         moveDuck(); 
     }
 }
@@ -183,5 +189,13 @@ function score(click_personage, event) {
             mis = 0;
             game = false;
         }
+    }
+}
+
+function fullsreen() {
+    full_sreen_check = document.getElementById("full_sreen_check").checked;
+    if (game == true && full_sreen_check == true) {
+        body_w = document.body.clientWidth;
+        stage.style.width = body_w + 'px';
     }
 }
