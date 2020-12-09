@@ -21,6 +21,8 @@ var background_h = parseInt(window.getComputedStyle(stage).height.replace('px','
 var personage_w = parseInt(window.getComputedStyle(personage).width.replace('px',''));
 var personage_h = parseInt(window.getComputedStyle(personage).height.replace('px',''));
 
+const background_w_normal = parseInt(window.getComputedStyle(stage).width.replace('px','')); 
+
 //variabelen om de positie te bepalen
 var pos_x = 0;
 var pos_y = 0;
@@ -53,7 +55,7 @@ function start() {
     
         personage.style.top = pos_y + 'px'; 
         personage.style.left = pos_x + 'px';
-        personage.style.cursor = 'pointer';
+        personage.style.cursor = "url('cursor_images/roos3_zonder_achtergrond-removebg-preview2.png') 25 25, pointer";
     
         game = true; 
         fullsreen();  
@@ -197,5 +199,7 @@ function fullsreen() {
     if (game == true && full_sreen_check == true) {
         body_w = document.body.clientWidth;
         stage.style.width = body_w + 'px';
+    } else if (game == true && full_sreen_check == false) {
+        stage.style.width = background_w_normal + 'px';
     }
 }
